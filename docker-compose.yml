@@ -1,0 +1,25 @@
+version: '3.11'
+
+
+services:
+  bot:
+    build: .
+    restart: always
+    container_name: factor_book_con
+    depends_on:
+      - pg
+
+
+  pg:
+    image: postgres:alpine
+    restart: always
+    container_name: pg_con
+    environment:
+      POSTGRES_PASSWORD: 1
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+
+volumes:
+  pg_data:

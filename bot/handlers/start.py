@@ -1,3 +1,5 @@
+import bs4
+import requests
 from aiogram import html, Router, F
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
@@ -6,6 +8,7 @@ from aiogram.types import Message
 from sqlalchemy import select, insert
 from sqlalchemy.orm import Session
 
+from Beautyfullsoup.beautyfullSoup import beautyfullsoup
 from bot.buttons.reply_btn import *
 from bot.state.state import StepState
 from db.models import User
@@ -42,6 +45,9 @@ async def start_handler(message: Message, session: Session, state: FSMContext) -
         await state.set_state(StepState.step2)
     if message.text == admin:
         await message.answer("https://t.me/Absaitov_Dilshod")
+    if message.text == newpost:
+        result = beautyfullsoup()
+        await message.answer(result)
 
 # await state.set_state(BackState.back1)
 

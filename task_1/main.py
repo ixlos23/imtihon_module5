@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN)
 storage = MemoryStorage()
-dp = Dispatcher(bot, storage=storage) # noqa
+dp = Dispatcher(bot, storage=storage)
 dp.middleware.setup(LoggingMiddleware()) # noqa
 
 

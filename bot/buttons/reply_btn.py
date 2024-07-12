@@ -4,6 +4,7 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 filial = "Filial 📍"
 start = "Start ✅"
 admin = "Admin 👨🏻‍💻"
+newpost = "NewsPost"
 
 
 def start_btn():
@@ -11,7 +12,8 @@ def start_btn():
     design = [
         KeyboardButton(text=filial),
         KeyboardButton(text=start),
-        KeyboardButton(text=admin)
+        KeyboardButton(text=admin),
+        KeyboardButton(text=newpost)
     ]
     rmk.add(*design)
     rmk.adjust(2 , 1)

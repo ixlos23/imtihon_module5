@@ -27,8 +27,8 @@ back = "🔙 back"
 def men_women():
     rmk = ReplyKeyboardBuilder()
     design = [
-        KeyboardButton(text=men),
         KeyboardButton(text=women),
+        KeyboardButton(text=men),
         KeyboardButton(text=back)
     ]
     rmk.add(*design)
